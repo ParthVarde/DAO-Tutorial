@@ -10,7 +10,7 @@ interface IFakeNFTMarketPlace {
 }
 
 interface ICryptoDevsNFT {
-    function balanceof(address owner) external view returns(uint256);
+    function balanceOf(address owner) external view returns(uint256);
     function tokenOfOwnerByIndex(address owner, uint256 index) external view returns(uint256);
 }
 
@@ -42,7 +42,7 @@ contract CryptoDevsDAO is Ownable {
     }
 
     modifier nftHolderOnly {
-        require(cryptoDevsDAO.balanceof(msg.sender) > 0, "Not a DAO member");
+        require(cryptoDevsDAO.balanceOf(msg.sender) > 0, "Not a DAO member");
         _;
     }
 
@@ -68,7 +68,7 @@ contract CryptoDevsDAO is Ownable {
 
     function voteOnProposal(uint256 proposalIndex, Vote vote) external nftHolderOnly activeProposalsOnly(proposalIndex) {
         Proposal storage proposal = proposals[proposalIndex];
-        uint256 voterNFTBalance = cryptoDevsDAO.balanceof(msg.sender);
+        uint256 voterNFTBalance = cryptoDevsDAO.balanceOf(msg.sender);
         uint256 numVotes = 0;
 
         for(uint256 i = 0; i < voterNFTBalance; i++) {

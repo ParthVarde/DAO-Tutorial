@@ -8,7 +8,7 @@ async function main() {
   console.log("Fake market deployed to - ", fakeNFTMarketPlace.address);
 
   const CryptoDevsDAOFactory = await ethers.getContractFactory("CryptoDevsDAO");
-  const cryptoDevsDAO = await CryptoDevsDAOFactory.deploy(fakeNFTMarketPlace.address, CRYTODEVS_NFT_COTNRACT_ADDRESS);
+  const cryptoDevsDAO = await CryptoDevsDAOFactory.deploy(fakeNFTMarketPlace.address, CRYTODEVS_NFT_COTNRACT_ADDRESS, { value: ethers.utils.parseEther("0.1") });
   await cryptoDevsDAO.deployed();
   console.log("DAO deployed to - ", cryptoDevsDAO.address);
 }
