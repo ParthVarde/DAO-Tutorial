@@ -1,0 +1,23 @@
+{
+  "name": "dao-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParthVarde/DAO-Tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParthVarde/DAO-Tutorial/issues"
+  },
+  "homepage": "https://github.com/ParthVarde/DAO-Tutorial#readme",
+  "dependencies": {
+    "hardhat": "^2.10.2"
+  }
+}
